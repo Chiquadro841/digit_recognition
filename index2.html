@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Riconoscimento Numeri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        canvas {
+            background-color: white; /* Imposta lo sfondo del canvas a bianco */
+            border: 1px solid black; /* Bordo nero per il canvas */
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .prediction {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .preview {
+            margin-top: 20px;
+        }
+        .preview img {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scrivi un numero</h1>
+    <!-- Canvas per disegnare -->
+    <canvas id="canvas" width="280" height="280"></canvas>
+
+    <!-- Risultato della previsione -->
+    <div class="prediction">
+        Numero Predetto: <span id="prediction">?</span>
+    </div>
+
+
+    <div>
+        <label for="targetInput">Target (Etichetta):</label>
+        <input type="text" id="targetInput" placeholder="Inserisci il target" />
+        <label for="lineWidthInput">Spessore Linea:</label>
+    <input type="number" id="lineWidthInput" value="20" min="1" max="50" />
+    </div>
+
+
+    <!-- Pulsanti -->
+    <div class="buttons">
+        <button onclick="clearCanvas()">Pulisci Canvas</button>
+        <button onclick="recognizeDigit()">Riconosci Numero</button>
+        <button onclick="showResizedCanvasImage()">Visualizza Immagine Ridimensionata</button>
+    </div>
+
+    <div><button onclick="saveResizedImage()">Salva Immagine</button>
+    </div>
+
+    <!-- Sezione per anteprima immagine ridimensionata -->
+    <div class="preview">
+        <h2>Immagine Ridimensionata</h2>
+        <img id="resizedImagePreview" alt="Anteprima Immagine Ridimensionata">
+    </div>
+
+    <!-- Collegamento al file JavaScript -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
